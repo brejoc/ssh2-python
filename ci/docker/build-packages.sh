@@ -12,7 +12,7 @@ for x in `ls -1d ci/docker/{fedora,centos}*`; do
     docker pull $docker_tag || echo
     docker build --cache-from $docker_tag $x -t $name
     docker tag $name $docker_tag
-    # docker push $docker_tag
+    docker push $docker_tag
     sudo rm -rf build dist
     # Fix version used by versioneer to current git tag so the generated .c files
     # do not cause a version change.
@@ -28,7 +28,7 @@ for x in `ls -1d ci/docker/{debian,ubuntu}*`; do
     docker pull $docker_tag || echo
     docker build --cache-from $docker_tag $x -t $name
     docker tag $name $docker_tag
-    # docker push $docker_tag
+    docker push $docker_tag
     sudo rm -rf build dist
     # Fix version used by versioneer to current git tag so the generated .c files
     # do not cause a version change.

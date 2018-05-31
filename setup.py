@@ -20,6 +20,7 @@ except ImportError:
 else:
     USING_CYTHON = True
 
+
 ON_WINDOWS = platform.system() == 'Windows'
 ON_RTD = os.environ.get('READTHEDOCS') == 'True'
 
